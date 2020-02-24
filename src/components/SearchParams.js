@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import pet, { ANIMALS } from '@frontendmasters/pet';
 import Result from './Results';
 import useDropdown from './useDropdown';
+import ThemeContext from './ThemeContext';
 
 const SearchParams = () =>{
     const [location , setLocation] = useState("Seattle, WA");
@@ -9,6 +10,7 @@ const SearchParams = () =>{
     const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS)
     const [breed, BreedDropdown, setBreed] = useDropdown("Breeds", "", breeds)
     const [pets, setPets] = useState([])
+    const [theme, setTheme] = useContext(ThemeContext);
 
     async function requestPets(){
         const { animals } = await pet.animals({
@@ -57,12 +59,27 @@ const SearchParams = () =>{
                 </div> 
                 <div className="form-group">  
                     <BreedDropdown />
-                </div>     
-                <button className="btn btn-outline-success">Submit</button>                
+                </div> 
+                <div className="form-group">  
+                    <label htmlFor="theme" className="col-sm-10 control-label">
+                        Theme
+                        <select className="form-control"
+                            value ={theme}
+                            onChange={e => setTheme(e.target.value)}
+                            onBlur={e => setTheme(e.target.value)}
+                        >
+                            <option value="peru">Peru</option>
+                            <option value="darkblue">Dark Blue</option>
+                            <option value="mediumorchid">Medium Orchid</option>
+                            <option value="chartreuse">Chartreuse</option>
+                        </select> 
+                    </label> 
+                </div>  
+                <button className="btn btn-outline-success" style={{ backgroundColor : theme }}>Submit</button>                
             </form>
              <Result pets={pets} />
         </div>
     )
 }
 
-export default SearchParams;
+export default SearchParams; 
