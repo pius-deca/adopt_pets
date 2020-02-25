@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-
+import '../App.css';
 // function Pet({ name, animal, breed }){
 //   return React.createElement("div", {}, [
 //     React.createElement("h4", {}, name),
@@ -19,7 +19,7 @@ function Pet({name, animal, breed, media, location, id}){
     return (
         <Link to={`/details/${id}`} className="pet">
             <div className="mt-4 image-container">
-                <img src={hero} alt={name} />
+                <img src={hero} alt={name} className="rounded-circle mx-auto d-block" />
             </div>
             <div className="info">
                 <h4 className="text-red">Name : {name.toUpperCase()}</h4>

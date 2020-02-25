@@ -4,7 +4,7 @@ const useDropdown = (label, defaultState, options) => {
     const [state, setState] = useState(defaultState)
     const id = `use-dropdown-${label.replace(" ", "").toLowerCase()}`
     const Dropdown = () => (
-        <label htmlFor={id} className="col-sm-10 control-label">
+        <label htmlFor={id} className="col-sm-12 control-label">
             {label}
                 <select
                     className="form-control"

@@ -5,6 +5,7 @@ import { Router, Link } from "@reach/router"
 import SearchParams from "./components/SearchParams";
 import Details from './components/Details';
 import ThemeContext from './components/ThemeContext';
+import './App.css';
 
 
 function App(){
@@ -15,7 +16,7 @@ function App(){
       <ThemeContext.Provider value={themeHook}>
         <div className="container mt-5">        
           <header>
-            <Link to ="/">Adopt Me!</Link>
+            <Link to ="/" className="header-text">Adopt Me!</Link>
           </header>  
           <Router>
             <SearchParams path="/" />

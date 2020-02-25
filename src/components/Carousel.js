@@ -26,8 +26,8 @@ class Carousel extends React.Component{
         const { photos, active } = this.state;
 
         return (
-            <div className ="carousel">
-                <img src = {photos[active]} alt="animal" />
+            <div className ="carousel d-flex">
+                <img src = {photos[active]} alt="animal" className ="mt-5 mr-5" width="350"/>
                 <div className="carousel-smaller">
                     {photos.map((photo, index) =>(
                         <img
@@ -37,6 +37,8 @@ class Carousel extends React.Component{
                             src ={photo}
                             className = {index === active ? "active" : ""}
                             alt="animal thumbnail"
+                            className ="rounded-circle mt-5 mr-5"
+                            width="33%"
                         />
                     ))}
                 </div>
