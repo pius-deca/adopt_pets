@@ -7,13 +7,6 @@ import ErrorBoundary from '../error/ErrorBoundary';
 import ThemeContext from './ThemeContext';
 
 class Details extends React.Component{
-    // constructor(props){
-    //     super(props)
-
-    //     this.state = {
-    //         loading : true
-    //     }
-    // }
     state = { 
         loading: true,
         showModal: false 
@@ -31,7 +24,7 @@ class Details extends React.Component{
                 breed: animal.breeds.primary,
                 loading: false
             })
-        }, console.error)
+        })
     }
 
     toggleModal = ()=> this.setState({ showModal: !this.state.showModal })

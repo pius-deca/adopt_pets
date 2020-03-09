@@ -1,14 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import '../App.css';
-// function Pet({ name, animal, breed }){
-//   return React.createElement("div", {}, [
-//     React.createElement("h4", {}, name),
-//     React.createElement("h4", {}, animal),
-//     React.createElement("h4", {}, breed)
-//   ]);
-// };
-
 function Pet({name, animal, breed, media, location, id}){
 
     let hero = 'http://placecorgi.com/300/300';

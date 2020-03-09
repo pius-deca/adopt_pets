@@ -23,14 +23,13 @@ const SearchParams = () =>{
     }
     
     useEffect(() =>{
-        // pet.breeds("dog").then(console.log, console.error);
         setBreeds([]);
         setBreed("");
         pet.breeds(animal).then(({ breeds }) =>{
             const breedStrings = breeds.map(({ name}) => name);
             setBreeds(breedStrings);
 
-        }, console.error)
+        })
     }, [animal, setBreed, setBreeds]);
 
     return (
